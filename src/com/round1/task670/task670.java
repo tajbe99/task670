@@ -13,15 +13,16 @@ public class task670 {
             e.printStackTrace();
         }
         try {
-            while (true){
-                String line = readBuff.readLine();
-                if (line==null) break;
-                Integer[] finalArray = CreateArray(line);
-                try (BufferedWriter writeBuff = new BufferedWriter(new FileWriter("src\\com\\round1\\task670\\output.txt",false)))
-                {
-                    writeBuff.write(finalArray[Integer.parseInt(line)-1].toString());
+            String line = readBuff.readLine();
+                if ((Integer.parseInt(line)>=1) && (Integer.parseInt(line)<=10000)){
+                    Integer[] finalArray = CreateArray(line);
+                    try (BufferedWriter writeBuff = new BufferedWriter(new FileWriter("src\\com\\round1\\task670\\output.txt",false)))
+                    {
+                        writeBuff.write(finalArray[Integer.parseInt(line)-1].toString());
+                    }
                 }
-
+                else {
+                    System.out.println("Натуральное число выходит за пределы  N (1 ≤ N ≤ 10000)");
             }
         } catch (IOException e) {
             e.printStackTrace();
